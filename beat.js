@@ -1,8 +1,15 @@
 var x = 0;
+var counter = 60;
 function setup() {
     createCanvas(200,200);
-}
+    timer = createP('timer');
 
+    interval = setInterval(timeIt, 500);
+}
+function timeIt(){
+    timer.html(counter);
+    counter --
+}
 function draw() {
     background(51);
     stroke(255);
@@ -13,6 +20,8 @@ if (x > width) {
     x = 0;
 }
 }
+
+
 
 // Timer ideas
 // I have an animation and a timer on the page. Instead of timing up, I can start the timer at something like 60 seconds.
